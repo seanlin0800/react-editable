@@ -31,7 +31,10 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'eslint-loader',
-        include: path.resolve(ROOT_PATH, 'examples'),
+        include: [
+          path.resolve(ROOT_PATH, 'examples'),
+          path.resolve(ROOT_PATH, 'src'),
+        ]
       }
     ],
 
