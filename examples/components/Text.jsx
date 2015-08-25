@@ -2,6 +2,10 @@ var React = require('react');
 
 var EditableText = require('../../src/components/EditableText');
 
+var Example = require('./Example');
+var jsx = require('./raw_code/text_jsx.txt');
+var js = require('./raw_code/text_js.txt');
+
 var Text = React.createClass({
 
   getInitialState: function() {
@@ -13,35 +17,19 @@ var Text = React.createClass({
   },
 
   render: function() {
+    var code = (
+      <EditableText initValue={this.state.value} onUpDate={this._update}>
+        <a href="#" />
+      </EditableText>
+    );
     return (
-      <div>
-        <h1>Text</h1>
-        <h3>demo</h3>
-        <div className="well">
-          <EditableText initValue={this.state.value} onUpDate={this._update}>
-            <a href="#" />
-          </EditableText>
-        </div>
-        <pre>
-          {JSON.stringify(this.state)}
-        </pre>
-        <h3>jsx</h3>
-        <pre>
-          {
-            '<EditableText initValue={this.state.value} onUpDate={this._update}>\n' +
-            '  <a href="#" />\n' +
-            '</EditableText>\n'
-          }
-        </pre>
-        <h3>js</h3>
-        <pre>
-          {
-            '_update: function(value) {\n' +
-            '  this.setState({value: value});\n' +
-            '},\n'
-          }
-        </pre>
-      </div>
+      <Example
+        title="Text"
+        code={code}
+        state={this.state}
+        jsx={jsx}
+        js={js}
+      />
     );
   }
 

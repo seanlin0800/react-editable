@@ -1,0 +1,3 @@
+<EditableText initValue={this.state.value} onUpDate={this._update}>
+  <a href="#" />
+</EditableText>
