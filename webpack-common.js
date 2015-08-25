@@ -54,7 +54,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Rmail',
+      title: 'React-editable',
       template: 'template.html'
     }),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
