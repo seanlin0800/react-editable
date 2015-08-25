@@ -23,7 +23,7 @@ var Text = React.createClass({
           </EditableText>
         </div>
         <pre>
-          {'this.state.value:' + this.state.value}
+          {JSON.stringify(this.state)}
         </pre>
         <h3>jsx</h3>
         <pre>

@@ -3,28 +3,16 @@ var React = require('react');
 var Form = React.createClass({
 
   propTypes: {
-    initValue: React.PropTypes.string.isRequired,
+    initValue: React.PropTypes.any.isRequired,
     onEnd: React.PropTypes.func,
-    onUpDate: React.PropTypes.func
-  },
-
-  getInitialState: function() {
-    return {value: this.props.initValue};
-  },
-
-  _handleChange: function(e) {
-    this.setState({value: e.target.value});
+    onUpDate: React.PropTypes.func,
+    control: React.PropTypes.node.isRequired
   },
 
   _update: function(e) {
     e.preventDefault();
     this.props.onEnd();
-    this.props.onUpDate(this.state.value);
-  },
-
-  _handleFocus: function(e) {
-    var len = this.state.value.length;
-    e.target.setSelectionRange(len, len);
+    this.props.onUpDate(this.refs.control.getValue());
   },
 
   _handleBlur: function() {
@@ -32,7 +20,7 @@ var Form = React.createClass({
 
     // when the blur event occurs, the activeElement we get is boby
     // here is the trick to get the 'real' activeElement
-    setTimeout(function(){
+    setTimeout(function() {
       if (React.findDOMNode(_this.refs.submit) !== document.activeElement) {
         _this.props.onEnd();
       }
@@ -43,13 +31,10 @@ var Form = React.createClass({
     return (
       <form className="form-inline editable-wrap" role="form" onSubmit={this._update}>
         <div className="editable-controls form-group">
-          <input
-           className="editable-has-buttons editable-input form-control"
-           value={this.state.value}
-           onChange={this._handleChange}
-           onFocus={this._handleFocus}
-           onBlur={this._handleBlur}
-           autoFocus={true}
+          <this.props.control
+            {...this.props}
+            onBlur={this._handleBlur}
+            ref="control"
           />
           <span className="editable-buttons">
             <button
@@ -63,7 +48,7 @@ var Form = React.createClass({
               <span className="glyphicon glyphicon-remove"></span>
             </button>
           </span>
-        </div>        
+        </div>
       </form>
     );
   }
