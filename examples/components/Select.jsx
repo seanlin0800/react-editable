@@ -2,6 +2,10 @@ var React = require('react');
 
 var EditableSelect = require('../../src/components/EditableSelect');
 
+var Example = require('./Example');
+var jsx = require('./raw_code/select_jsx.txt');
+var js = require('./raw_code/select_js.txt');
+
 var Select = React.createClass({
 
   getInitialState: function() {
@@ -19,50 +23,23 @@ var Select = React.createClass({
       {value: 3, text: 'status3'},
       {value: 4, text: 'status4'}
     ];
+    var code = (
+      <EditableSelect
+        initValue={this.state.status}
+        onUpDate={this._update}
+        options={options}
+      >
+        <a href="#" />
+      </EditableSelect>
+    );
     return (
-      <div>
-        <h1>Select</h1>
-        <h3>demo</h3>
-        <div className="well">
-          <EditableSelect
-            initValue={this.state.status}
-            onUpDate={this._update}
-            options={options}
-          >
-            <a href="#" />
-          </EditableSelect>
-        </div>
-        <pre>
-          {JSON.stringify(this.state)}
-        </pre>
-        <h3>jsx</h3>
-        <pre>
-          {
-            '<EditableSelect\n' +
-            '  initValue={this.state.status}\n' +
-            '  onUpDate={this._update}\n' +
-            '  options={options}\n' +
-            '>\n' +
-            '  <a href="#" />\n' +
-            '</EditableSelect>\n'
-          }
-        </pre>
-        <h3>js</h3>
-        <pre>
-          {
-            'var options = [\n' +
-            '  {value: 1, text: \'status1\'},\n' +
-            '  {value: 2, text: \'status2\'},\n' +
-            '  {value: 3, text: \'status3\'},\n' +
-            '  {value: 4, text: \'status4\'}\n' +
-            '];\n' +
-            '\n' +
-            '_update: function(value) {\n' +
-            '  this.setState({status: value});\n' +
-            '},\n'
-          }
-        </pre>
-      </div>
+      <Example
+        title="Select"
+        code={code}
+        state={this.state}
+        jsx={jsx}
+        js={js}
+      />
     );
   }
 

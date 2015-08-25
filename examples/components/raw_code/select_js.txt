@@ -1,0 +1,10 @@
+_update: function(value) {
+  this.setState({status: value});
+},
+
+var options = [
+  {value: 1, text: 'status1'},
+  {value: 2, text: 'status2'},
+  {value: 3, text: 'status3'},
+  {value: 4, text: 'status4'}
+];

@@ -51,6 +51,11 @@ module.exports = {
         // inline base64 URLs for <=8k images
         test: /\.(png|jpg|eot|ttf|svg|woff|woff2)$/,
         loader: 'url-loader?limit=8192'
+      },
+      {
+        test:/\.txt$/,
+        loader: 'raw-loader',
+        include: path.resolve(ROOT_PATH, 'examples')
       }
     ]
   },
