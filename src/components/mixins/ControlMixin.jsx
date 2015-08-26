@@ -3,7 +3,7 @@ var React = require('react');
 var ControlMixin = {
 
   propTypes: {
-    initValue: React.PropTypes.isRequired
+    initValue: React.PropTypes.any.isRequired
   },
 
   getInitialState: function() {
