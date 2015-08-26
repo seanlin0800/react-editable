@@ -9,8 +9,10 @@ var Main = React.createClass({
     return (
       <div className="container">
         <div className="row">
-          <Text />
-          <Select />
+          <div className="col-xs-12">
+            <Text />
+            <Select />
+          </div>
         </div>
       </div>
     );
