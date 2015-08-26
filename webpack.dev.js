@@ -8,7 +8,7 @@ var modulesPath = path.resolve(ROOT_PATH, 'node_modules');
 
 var libs = [
   'react-bootstrap;react-bootstrap/dist/react-bootstrap.min.js',
-  'react;react/dist/react.min.js'
+  'react;react/dist/react.js'
 ];
 
 function getAliases(aliases) {
