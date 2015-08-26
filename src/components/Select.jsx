@@ -13,9 +13,8 @@ var Select = React.createClass({
 
   _renderOptions: function() {
     return this.props.options.map(function(option, index) {
-      var selected = this.state.value === option.value;
       return (
-        <option value={option.value} selected={selected} key={index}>
+        <option value={option.value} key={index}>
           {option.text}
         </option>
       );

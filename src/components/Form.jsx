@@ -6,7 +6,7 @@ var Form = React.createClass({
     initValue: React.PropTypes.any.isRequired,
     onEnd: React.PropTypes.func,
     onUpDate: React.PropTypes.func,
-    control: React.PropTypes.node.isRequired
+    control: React.PropTypes.func.isRequired
   },
 
   _update: function(e) {
