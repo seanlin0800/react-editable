@@ -11,6 +11,12 @@ var EditableSelect = React.createClass({
 
   mixins: [EditableMixin],
 
+  getDefaultProps: function() {
+    return {
+      emptyText: 'Not set'
+    };
+  },
+
   render: function() {
     return this._render(Select);
   }

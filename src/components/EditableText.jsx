@@ -7,6 +7,12 @@ var EditableText = React.createClass({
 
   mixins: [EditableMixin],
 
+  getDefaultProps: function() {
+    return {
+      emptyText: 'empty'
+    };
+  },
+
   render: function() {
     return this._render(Input);
   }

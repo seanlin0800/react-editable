@@ -44,7 +44,7 @@ var Form = React.createClass({
             >
               <span className="glyphicon glyphicon-ok"></span>
             </button>
-            <button type="button" className="btn btn-default">
+            <button type="button" className="btn btn-default" onClick={this.props.onEnd}>
               <span className="glyphicon glyphicon-remove"></span>
             </button>
           </span>

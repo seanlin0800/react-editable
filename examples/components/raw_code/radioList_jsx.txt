@@ -1,0 +1,7 @@
+<EditableRadioList
+  initValue={this.state.status}
+  onUpDate={this._update}
+  options={options}
+>
+  <a href="#" />
+</EditableRadioList>
