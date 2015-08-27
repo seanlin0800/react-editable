@@ -2,6 +2,8 @@ var React = require('react');
 
 var Text = require('./Text');
 var Select = require('./Select');
+var RadioList = require('./RadioList');
+var CheckList = require('./CheckList');
 
 var Main = React.createClass({
 
@@ -12,6 +14,8 @@ var Main = React.createClass({
           <div className="col-xs-12">
             <Text />
             <Select />
+            <RadioList />
+            <CheckList />
           </div>
         </div>
       </div>
