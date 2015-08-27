@@ -19,7 +19,7 @@ var Example = React.createClass({
           {this.props.code}
         </div>
         <pre>
-          {JSON.stringify(this.props.state)}
+          {JSON.stringify(this.props.state, null, 2)}
         </pre>
         <h3>jsx</h3>
         <pre>
