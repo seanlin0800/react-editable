@@ -2,6 +2,7 @@ var React = require('react');
 
 var RadioList = require('./Radiolist');
 var EditableMixin = require('./mixins/EditableMixin');
+var getValueMap = require('../utils/getValueMap');
 
 var EditableRadioList = React.createClass({
 
@@ -22,10 +23,7 @@ var EditableRadioList = React.createClass({
   },
 
   componentWillMount: function() {
-    this._valueMap = {};
-    this.props.options.forEach(function(option) {
-      this._valueMap[option.value] = option.text;
-    }, this);
+    this._valueMap = getValueMap(this.props.options);
   },
 
   _getFormattedText: function() {

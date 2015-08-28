@@ -4,14 +4,7 @@ var CheckList = React.createClass({
 
   propTypes: {
     initValue: React.PropTypes.array.isRequired,
-    options: React.PropTypes.array.isRequired,
-    onBlur: React.PropTypes.func
-  },
-
-  getInitialState: function() {
-    return {
-      valueMap: this.props.initValue
-    };
+    options: React.PropTypes.array.isRequired
   },
 
   componentWillMount: function() {
